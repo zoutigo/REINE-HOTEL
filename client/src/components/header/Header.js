@@ -1,10 +1,13 @@
 import React from 'react'
+import {AppBar, Toolbar} from '@material-ui/core'
 
 function Header() {
     return (
-        <div>
-            ceci est mon Header
-        </div>
+        <AppBar>
+            <Toolbar>
+                My Toolbar
+            </Toolbar>
+        </AppBar>
     )
 }
 
