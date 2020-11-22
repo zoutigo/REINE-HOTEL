@@ -4,9 +4,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ThemeProvider } from '@material-ui/core'
+import theme from './utils/theme'
+
+import {Provider} from 'react-redux'
+import { useQuery, QueryCache, ReactQueryCacheProvider } from "react-query";
+import {store} from './redux/store'
+
+const queryCache = new QueryCache({
+  defaultConfig: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnMount : false ,
+    },
+  },
+})
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ReactQueryCacheProvider queryCache={queryCache}>
+        <Provider store = {store}>
+            <ThemeProvider theme={theme}>
+              <App />
+            </ThemeProvider>
+          </Provider>
+    </ReactQueryCacheProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
