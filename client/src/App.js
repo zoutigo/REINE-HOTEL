@@ -5,6 +5,7 @@ import Footer from '../src/components/footer/Footer'
 import {makeStyles} from '@material-ui/styles'
 import theme from './utils/theme'
 
+
 const useStyles = makeStyles((theme)=> ({
     root: {
       flexGrow: 1
@@ -27,20 +28,25 @@ const useStyles = makeStyles((theme)=> ({
 function App() {
   const classes = useStyles()
   return (
-  
-          <Grid container>
-              <Grid item container   className={classes.header}>
-                  <Header />
-                 
+        
+             <Grid container>
+
+                <Grid item container   className={classes.header}>
+                    <Header />
+                </Grid>
+
+                <Grid item container xs={12} className={classes.content}>
+                  <Content />
+                   
               </Grid>
-              <Grid item container xs={12} className={classes.content}>
-                <Content />
-            </Grid>
-            <Grid item container>
-                <Footer />
-          </Grid>
+
+              <Grid item container>
+                  <Footer />
+              </Grid>
       
-        </Grid>
+           </Grid>
+        
+         
    
   
   );

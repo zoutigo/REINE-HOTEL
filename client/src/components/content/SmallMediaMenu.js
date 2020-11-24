@@ -1,5 +1,7 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import {useSelector, useDispatch} from 'react-redux'
+import {openBurgerMenu} from '../../redux/settings/settingsActions'
 import {Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/styles'
 
@@ -35,14 +37,19 @@ const navElements = [{'name': 'acceuil', 'link': '/home'},
 
 function SmallMediaMenu() {
     const classes = useStyles()
+    const dispatch = useDispatch()
+
     const burgerMenuIsOpened = useSelector(state => state.settings.burgerMenuIsOpened)
-    console.log(burgerMenuIsOpened)
     const burgerStyle = () =>{
         if(burgerMenuIsOpened){
             return displayStyle
         }else {
             return hiddenStyle
         }
+    }
+
+    const handleClick = ()=> {
+        dispatch(openBurgerMenu())
     }
 
     return (
@@ -54,7 +61,7 @@ function SmallMediaMenu() {
                  navElements.map((element, index)=>{
                      return (
                          <Typography key={index}>
-                             {element.name}
+                            <NavLink to={element.link} onClick={handleClick}>{element.name} </NavLink>
                          </Typography>
                      )
                  })

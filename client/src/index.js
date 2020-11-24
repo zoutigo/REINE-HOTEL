@@ -11,6 +11,10 @@ import {Provider} from 'react-redux'
 import { useQuery, QueryCache, ReactQueryCacheProvider } from "react-query";
 import {store} from './redux/store'
 
+import {BrowserRouter as Router} from 'react-router-dom'
+
+
+
 const queryCache = new QueryCache({
   defaultConfig: {
     queries: {
@@ -26,7 +30,9 @@ ReactDOM.render(
     <ReactQueryCacheProvider queryCache={queryCache}>
         <Provider store = {store}>
             <ThemeProvider theme={theme}>
-              <App />
+              <Router>
+               <App />
+              </Router>
             </ThemeProvider>
           </Provider>
     </ReactQueryCacheProvider>
