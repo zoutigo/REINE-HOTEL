@@ -5,8 +5,8 @@ import Footer from '../src/components/footer/Footer'
 
 function App() {
   return (
-   <Grid container>
-     <Grid item container>
+   <Grid container direction='column'>
+     <Grid item container >
       <Header />
      </Grid>
      <Grid item container>
