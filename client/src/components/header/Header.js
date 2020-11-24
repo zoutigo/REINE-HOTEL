@@ -16,13 +16,13 @@ function Header() {
     const classes = useStyles()
     const [width, height] = useWindowWidthAndHeight();
     return (
-      <header>
-            <AppBar>
+     
+            <AppBar position='fixed'>
             {
                 width > 978 ? <LargeToolbar /> : <SmallToolBar />
             }
             </AppBar>
-      </header>
+     
     )
 }
 

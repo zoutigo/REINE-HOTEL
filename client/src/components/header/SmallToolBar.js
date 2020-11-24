@@ -1,4 +1,6 @@
 import React from 'react'
+import {useDispatch} from 'react-redux'
+import {openBurgerMenu} from '../../redux/settings/settingsActions'
 import { Toolbar , IconButton, Typography, Box, Button, Badge, Paper} from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import MenuIcon from '@material-ui/icons/Menu';
@@ -17,24 +19,24 @@ const useStyles = makeStyles((theme)=>({
       title: {
         flexGrow: 1,
       },
-      burgerMenu : {
-          backgroundColor: theme.palette.coyotte.main,
-          minHeight: '100vh',
-          transform: 'translate(0 , 1000px)'
-      }
+     
 }))
 
-const navElements = [{'name': 'acceuil', 'link': '/home'},
-                     {'name': 'chambres', 'link': '/rooms'},
-                    {'name': 'services', 'link': '/services'},
-                    {'name': 'restaurant', 'link': '/restaurant'}]
+
 
 function SmallToolBar() {
     const classes = useStyles()
+    const dispatch = useDispatch()
+
+    const handleBurgerMenu = ()=> {
+            dispatch(openBurgerMenu())
+
+
+    }
     return (
         <div>
           <Toolbar className={classes.root}>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={handleBurgerMenu}>
               <MenuIcon />
             </IconButton>
 
@@ -42,7 +44,7 @@ function SmallToolBar() {
               Hotel Reine
             </Typography>
 
-           <Typography variant="div">
+           <Typography >
                 <IconButton aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="secondary">
                         <MailIcon />
@@ -66,9 +68,7 @@ function SmallToolBar() {
            </Typography>
 
           </Toolbar>
-         {/* <Typography className={classes.burgerMenu}>
-             He will appear the menu
-         </Typography> */}
+     
         </div>
 
     )
