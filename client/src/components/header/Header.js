@@ -8,7 +8,8 @@ import SmallToolBar from './SmallToolBar'
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: '#0a0a0aff'
+        backgroundColor: '#0a0a0aff',
+        minWidth: '310px'
     }
 })
 
@@ -17,7 +18,7 @@ function Header() {
     const [width, height] = useWindowWidthAndHeight();
     return (
      
-            <AppBar position='fixed'>
+            <AppBar position='fixed' className={classes.root}>
             {
                 width > 978 ? <LargeToolbar /> : <SmallToolBar />
             }

@@ -1,7 +1,7 @@
 import React from 'react'
 import SmallMediaMenu from './SmallMediaMenu'
 
-import {BrowserRouter as Router , Switch, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import Rooms from './rooms/Rooms'
 import Home from './home/Home'
 import Restaurant from './restaurant/Restaurant'
@@ -18,7 +18,7 @@ function Content() {
                     <Switch>
                             <Route path='/' exact component={Home} /> 
                             <Route path='/home' exact component={Home} /> 
-                            <Route path='/rooms'  component={Rooms} /> 
+                            <Route path='/rooms' exact component={Rooms} /> 
                             <Route path='/restaurant' exact component={Restaurant} /> 
                             <Route path='/services' exact component={Services} /> 
                             <Route path='/events' exact component={Events} /> 
