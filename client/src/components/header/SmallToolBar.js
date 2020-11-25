@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme)=>({
       menuButton: {
         marginRight: theme.spacing(1),
       },
-      title: {
+      logo: {
         flexGrow: 1,
         textTransform: 'uppercase',
         fontWeight: 'bold',
@@ -47,7 +47,7 @@ function SmallToolBar() {
               {burgerMenuIsOpened ?  <CloseIcon /> : <MenuIcon />}
             </IconButton>
 
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h6" className={classes.logo}>
               Hotel Reine
             </Typography>
 
