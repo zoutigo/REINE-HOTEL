@@ -41,7 +41,10 @@ const useStyles = makeStyles((theme)=>({
           fontSize: '0.8em',
           color: theme.palette.white.main,
           fontWeight: 'bold',
-          letterSpacing:'1px'
+          letterSpacing:'1px',
+          '&:hover': {
+            color: "green",
+         },
       },
       
       bookingBtn : {
@@ -86,7 +89,7 @@ function LargeToolbar() {
                         navElements.map((element, index)=>{
                             return (
                                 
-                                    <NavLink key={index}to={element.link} className={classes.navLinks}>
+                                    <NavLink key={index}to={element.link} className={classes.navLinks} activeStyle={{ color: 'red' }}>
                                         {element.name} 
                                     </NavLink>
                                 

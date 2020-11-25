@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {openBurgerMenu} from '../../redux/settings/settingsActions'
 import { Toolbar , IconButton, Typography, Box, Button, Badge, Paper} from '@material-ui/core'
@@ -77,7 +78,9 @@ function SmallToolBar() {
                     //   onClick={handleProfileMenuOpen}
                     color="inherit"
                     >
-                    <AccountCircle />
+                      <NavLink to='/profile' style={{color:'inherit'}}>
+                          <AccountCircle />
+                      </NavLink>
                    </IconButton>
 
            </Typography>
