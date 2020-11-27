@@ -31,11 +31,11 @@ function App() {
         
              <Grid container>
 
-                <Grid item container   className={classes.header}>
+                <Grid item container   >
                     <Header />
                 </Grid>
 
-                <Grid item container xs={12} className={classes.content}>
+                <Grid item container xs={12} >
                   <Content />
                    
               </Grid>

@@ -4,6 +4,7 @@ const theme = createMuiTheme({
   palette: {
     dark: {
       main: '#0a0a0aff',
+      light: 'rgba(36, 36, 35, 1)',
     },
     darkblue: {
       main: 'rgba(10, 17, 31, 1)',
@@ -31,6 +32,12 @@ const theme = createMuiTheme({
     },
     
   },
+  typography :{
+    body2 : {
+      fontFamily :'Montserrat',
+      fontWeigth: '900'
+    }
+  }
 });
 
 export default theme
